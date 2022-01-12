@@ -26,10 +26,11 @@ This is the same as supplied value hence it is an Armstrong number.
     }
 ```
 #### Output
->Enter 3 Digit Number
->153
->153 is an Armstrong number.
-
+```sh
+Enter 3 Digit Number
+153
+153 is an Armstrong number.
+```
 ##### 2. Find out all the Armstrong numbers falling in the range of 100-999
 ```sh
     import java.util.Scanner;
@@ -61,15 +62,16 @@ This is the same as supplied value hence it is an Armstrong number.
     }
 ```
 #### Output
->Enter lower limit
->100
->Enter upper limit
->999
->153 is a Armstrong number
->370 is a Armstrong number
->371 is a Armstrong number
->407 is a Armstrong number
-
+```sh
+Enter lower limit
+100
+Enter upper limit
+999
+153 is a Armstrong number
+370 is a Armstrong number
+371 is a Armstrong number
+407 is a Armstrong number
+```
 ##### 3. Find out the simple as well as the compound interest of supplied
 ```sh
     import java.util.Scanner;
@@ -98,15 +100,16 @@ This is the same as supplied value hence it is an Armstrong number.
     }
 ```
 #### Output
->Enter amount:
->1000
->Enter the No.of years:
->4
->Enter the Rate of interest
->10
->Simple Interest = 400.00
->Compound Interest = 464.10
-
+```sh
+Enter amount:
+1000
+Enter the No.of years:
+4
+Enter the Rate of interest
+10
+Simple Interest = 400.00
+Compound Interest = 464.10
+```
 #### 4. Supply marks of three subject and declare the result, result declaration is based on below conditions 
 * Condition 1: All subjects marks is greater than 60 is Passed
 * Condition 2: Any two subjects marks are greater than 60 is Promoted
@@ -136,14 +139,15 @@ This is the same as supplied value hence it is an Armstrong number.
         }
 ```
 #### Output
->Enter Maths marks:
->75
->Enter java marks:
->59
->Enter english marks:
->45
->Result : Failed:(
-
+```sh
+Enter Maths marks:
+75
+Enter java marks:
+59
+Enter english marks:
+45
+Result : Failed:(
+```
 ##### 5. Calculate the income tax on the basis of following table.
 ```sh
     import java.util.Scanner;
@@ -169,10 +173,11 @@ This is the same as supplied value hence it is an Armstrong number.
     }
 ```
 #### Output
->Enter income 
->510000
->Income tax amount is 153000.0
-
+```sh
+Enter income 
+510000
+Income tax amount is 153000.0
+```
 ##### 6. Consider a CUI based application, where you are asking a user to enter his Login name and password,after entering the valid user-id and password it will print the message "Welcome" along with user name.As per the validation is concerned, the program should keep a track of login attempts.After three attempts a message should be flashed saying "Contact Admin" and the program should terminate.
 ```sh
     import java.util.Scanner;
@@ -204,22 +209,23 @@ This is the same as supplied value hence it is an Armstrong number.
     }
 ```
 #### Output
->Enter username :
->haha
->Enter password :
->123
->Invalid credentials.Try Again!!Remaining Attempts 2
->Enter username :
->hey
->Enter password :
->hey123
->Invalid credentials.Try Again!!Remaining Attempts 1
->Enter username :
->Hima
->Enter password :
->haha22
->Sorry Hima!! Contact Admin
-
+```sh
+Enter username :
+haha
+Enter password :
+123
+Invalid credentials.Try Again!!Remaining Attempts 2
+Enter username :
+hey
+Enter password :
+hey123
+Invalid credentials.Try Again!!Remaining Attempts 1
+Enter username :
+Hima
+Enter password :
+haha22
+Sorry Hima!! Contact Admin
+```
 ##### 7. There is an Array which is of the size 15, which may or may not be sorted. You should write a program to accept a number and search if it in contained in the array
 ##### Value to be search is 19
 
@@ -255,13 +261,14 @@ public class ArraySearch {
 
 }
 ```
-####Output
->Display array :
->[5, 12, 14, 6, 78, 19, 1, 23, 26, 35, 37, 7, 52, 86, 47]
->Value to be searched :
->19
->19 Number Found
-
+#### Output
+```sh
+Display array :
+[5, 12, 14, 6, 78, 19, 1, 23, 26, 35, 37, 7, 52, 86, 47]
+Value to be searched :
+19
+19 Number Found
+```
 ##### 8. Using the above table write method apply sorting using Bubble Sort
 ```sh
 public class Bubblesort {
@@ -296,11 +303,12 @@ public class Bubblesort {
 }  
 ```
 #### Output
->Array Before Bubble Sort
->3 60 35 2 45 320 5 
->Array After Bubble Sort
->2 3 5 35 45 60 320 
-
+```sh
+Array Before Bubble Sort
+3 60 35 2 45 320 5 
+Array After Bubble Sort
+2 3 5 35 45 60 320 
+```
 ##### 9. Accept the marks of three students for the subject say A, B, C. Find the total scored and the average in all the subjects.
 #####Also Find the Total and Average scored by students in each respective Subject.
 ```sh
@@ -363,28 +371,29 @@ public class ScoreAvg {
 }
 ```
 #### Output
->Enter the marks 
->Enter the marks for student 1
->50
->75
->80
->Enter the marks for student 2
->95
->85
->78
->Enter the marks for student 3
->77
->89
->76
->Total marks in all subjects is: 705.0
->Average marks in all subjects is: 78.33333333333333
+```sh
+Enter the marks 
+Enter the marks for student 1
+50
+75
+80
+Enter the marks for student 2
+95
+85
+78
+Enter the marks for student 3
+77
+89
+76
+Total marks in all subjects is: 705.0
+Average marks in all subjects is: 78.33333333333333
 
->Total marks for student 1 of each subject is: 205.0
->Average marks for student 1 of each subject is: 68.33333333333333
+Total marks for student 1 of each subject is: 205.0
+Average marks for student 1 of each subject is: 68.33333333333333
 
->Total marks for student 2 of each subject is: 258.0
->Average marks for student 2 of each subject is: 86.0
+Total marks for student 2 of each subject is: 258.0
+Average marks for student 2 of each subject is: 86.0
 
->Total marks for student 3 of each subject is: 242.0
->Average marks for student 3 of each subject is: 80.66666666666667
-
+Total marks for student 3 of each subject is: 242.0
+Average marks for student 3 of each subject is: 80.66666666666667
+```
