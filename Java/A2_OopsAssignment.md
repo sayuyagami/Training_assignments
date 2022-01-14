@@ -41,6 +41,7 @@ Singleton@6504e3b2
 Employee, Manager & Labour where Manager & Labour are the sub classes of the Employee.
 Manager has incentive & Labour has over time. Add the functionality to calculate total salary of all the employees. Use polymorphism i.e. method overriding.
 ```sh
+import java.util.Scanner;
 class Employee{
 float salary = 30000;
 }
@@ -59,7 +60,6 @@ public void salary() {
 	System.out.println("Labour salary is :" +salary);
 	System.out.println("Overtime for Labour :" +overtime);
 }
-
 }
 public class Hierarchy
 {
@@ -74,7 +74,12 @@ l.salary();
 salary(m.sal,l.sal);
 }
 static void salary(double a, double b) {
-	double addsal=a+b;
+	Scanner sc =new Scanner(System.in);
+	System.out.println("Enter no. of managers : ");
+	int mn = sc.nextInt();
+	System.out.println("Enter no. of labours : ");
+	int emp = sc.nextInt();
+	double addsal=(mn*a)+(emp*b);
 	System.out.println("Sum of all employees salary :" +addsal);
 }
 }
@@ -85,7 +90,11 @@ Manager salary is :30000.0
 Incentive for Manager:5.0
 Labour salary is :30000.0
 Overtime for Labour :10.0
-Sum of all employees salary :450000.0
+Enter no. of managers : 
+5
+Enter no. of labours : 
+10
+Sum of all employees salary :3750000.0
 ```
 > 3.Write a program to consider saving & current account in the bank. Saving account holder has "Fixed Deposits' whereas Current account holder has cash credit. Apply polymorphism to find out total cash in the bank.
 ```sh
