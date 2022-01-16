@@ -34,7 +34,9 @@ Error raised when divided by zero java.lang.ArithmeticException: / by zero
 > 2.Carrying forward with the above problem, handle ArithmeticException by raising Unsupported OperationException as a solution.
 ```sh
 import java.util.Scanner;
+
 public class Arthimetic {
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 	   int a,b;
@@ -45,15 +47,14 @@ public class Arthimetic {
 	   b=sc.nextInt();
 	   
 	   try {
-		   System.out.println(a/b);
-		   throw new UnsupportedOperationException("Number not dividable by zero");
-		   
+		   System.out.println(a/b); 
 	   }catch(ArithmeticException e){
-		   System.out.println("Error raised when divided by zero "+ e);
-		   throw e;
+		  e.printStackTrace();
 	   }
+	   throw new UnsupportedOperationException("Denomenator should not be zero");
 	}
 }
+
 ```
 #### Output
 ```sh
@@ -61,9 +62,10 @@ Enter value for a :
 37
 Enter value for b : 
 0
-Error raised when divided by zero java.lang.ArithmeticException: / by zero
-Exception in thread "main" java.lang.ArithmeticException: / by zero
+java.lang.ArithmeticException: / by zero
 	at Arthimetic.main(Arthimetic.java:15)
+Exception in thread "main" java.lang.UnsupportedOperationException: Denomenator should not be zero
+	at Arthimetic.main(Arthimetic.java:19)
 ```
 > 3.Write an application to perform withdraw functionality on a SavingAccount object. Point to
 note:
@@ -80,17 +82,25 @@ Note: SavingAccount
 --double deposit(double amount)
 ```sh
 import java.util.Scanner;
+//customized exception
+class InsufficientBalanceException extends RuntimeException{
+}
+
+//customized exception
+class IllegalBankTransactionException extends RuntimeException{
+}
+
 public class SavingAccount{
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub  
 		
-		int id[]= {1006,1155,1137};
+		long id[]= {1006,1155,1137};
 		double amt[]= {500.0,1000.0,5000.0}; 
 		
 		Scanner sc = new Scanner(System.in); 
 		 char ch;
-		 int withd,depid;
+		 long withd,depid;
 		 double withdamt,val=0,depamt;
 	        do {  
 	            System.out.println("\n ***Welcom to Savings Account Application***");  
@@ -114,15 +124,21 @@ public class SavingAccount{
 	                    			}
 	                    			try {
                     					if(withdamt > amt[i]) {
-                    						throw new Exception("InsufficientBalanceException");
+                    						throw new InsufficientBalanceException();
                     					}
                     					if(withdamt < 0) {
-                    						throw new Exception("IllegalBankTransactionException");
+                    						throw new IllegalBankTransactionException();
 	                    				}
-                    				}catch(Exception e){
-                    					System.out.println(e.getMessage());
+                    				}catch(InsufficientBalanceException e){
+                    					System.out.println("InsufficientBalanceException...check your balance!!");
+                    					e.printStackTrace();
+                    					System.exit(0);
                     					
-                    				}
+                    				}catch(IllegalBankTransactionException e) {
+                    					System.out.println("IllegalBankTransactionException...please enter valid amount!!");
+                    					e.printStackTrace();
+                    					System.exit(0);
+                    					}
 	                    			break;
 	                    		}else {
 	                    			if(i==(id.length-1)) {
@@ -176,8 +192,27 @@ Enter your ID:
 1006
 Your Balance : 500.0
 Enter your withdrawal amount : 
--144
-IllegalBankTransactionException
+600
+InsufficientBalanceException...check your balance!!
+InsufficientBalanceException
+	at SavingAccount.main(SavingAccount.java:44)
+```
+```sh
+ ***Welcom to Savings Account Application***
+a. Withdraw 
+ b. Deposit 
+  c.Exit 
+Enter your choice: 
+b
+
+ ***Deposit Module***
+Enter your ID: 
+1137
+Your Balance : 5000.0
+Enter your deposit amount : 
+3000
+Deposit done Successfully
+Your Balance : 8000.0
 
  ***Welcom to Savings Account Application***
 a. Withdraw 
@@ -191,30 +226,8 @@ Enter your ID:
 1155
 Your Balance : 1000.0
 Enter your withdrawal amount : 
-2500
-InsufficientBalanceException
-
- ***Welcom to Savings Account Application***
-a. Withdraw 
- b. Deposit 
-  c.Exit 
-Enter your choice: 
-b
-
- ***Deposit Module***
-Enter your ID: 
-1137
-Your Balance : 5000.0
-Enter your deposit amount : 
-1000
-Deposit done Successfully
-Your Balance : 6000.0
-
- ***Welcom to Savings Account Application***
-a. Withdraw 
- b. Deposit 
-  c.Exit 
-Enter your choice: 
-c
-See you soon...Have a great day!!
+-100
+IllegalBankTransactionException...please enter valid amount!!
+IllegalBankTransactionException
+	at SavingAccount.main(SavingAccount.java:47)
 ```
