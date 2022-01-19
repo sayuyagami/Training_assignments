@@ -1,4 +1,4 @@
-# Collections Concept | Assignment 5
+# Collections Concept | Assignment 6
 ------------------------------------------------------------------------------
 > 1.Given a TreeMap<Long, Contact> which has phone numbers for keys and contact objects for
 values.

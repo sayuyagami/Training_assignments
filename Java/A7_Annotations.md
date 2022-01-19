@@ -1,4 +1,4 @@
-# Annotations Concept | Assignment 5
+# Annotations Concept | Assignment 7
 ------------------------------------------------------------------------------
 > 1.Create a custom annotation called @Test which can be only applied on a method implying that the following method is a test-case. (Is it possible to restrict the annotation to be applied only on a non-static method?)
 ```sh
