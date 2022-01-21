@@ -1,8 +1,10 @@
-# Lambda Expressions | Assignment 10
-------------------------------------------------------------------------------
+﻿# JAVA 11 | Assignment 10
+
 >1.Write a program to calculate the Simple Interest with minimal code using features of Java 11.
 Hint: Use the concept of functional interface and Local variable syntax for lambda parameters.
 ```sh
+import java.util.Scanner;
+
 @FunctionalInterface
 interface SI {
     int formula(int x,int y,int z);
@@ -11,19 +13,33 @@ interface SI {
 public class Simpleinterest {
 
 	public static void main(String[] args) {
-		int p=1000,r=10,t=2;
+		int p,r,t;
+		Scanner sc = new Scanner(System.in);
 		
-		 //lambda expression to define the simple interest formula
-		 SI s=(x,y,z)->(x*y*z)/100;
+		System.out.println("Enter the value for principal : ");
+		p=sc.nextInt();
+		System.out.println("Enter the value for rate : ");
+		r=sc.nextInt();
+		System.out.println("Enter the value for time : ");
+		t=sc.nextInt();
 		
-		 int simp = s.formula(p,r,t);
-	     System.out.println("Simple interest : "+simp);
+		//lambda expression to define the simple interest formula
+		SI s=(x,y,z)->(x*y*z)/100;
+		
+		int simp = s.formula(p,r,t);
+	    System.out.println("Simple interest : "+simp);
 	}
 }
 ```
 #### Output
 ```sh
-Simple interest : 200
+Enter the value for principal : 
+1000
+Enter the value for rate : 
+2
+Enter the value for time : 
+5
+Simple interest : 100
 ```
 >2.Java 11 supports var keyword for variable declarations. List the scenarios where var keyword cannot be used for such variable declarations. Give reason in support of your answer for each scenario.
 
