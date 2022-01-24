@@ -154,19 +154,30 @@ public class BankAccount{
 		public static void withdraw(double withdamt, double balance) {
 			// TODO Auto-generated method stub
 			
-			if(withdamt <= balance && withdamt > 0 && withdamt > 20000) {
+			if(withdamt <= balance && withdamt > 20000) {
 				System.out.println("Withdraw done Successfully");
 				balance=balance-withdamt;
 
+				}else if( withdamt < 0) 
+				{
+					throw new InvalidEntryException("InvalidEntry Fund RuntimeException");
+					
 				}else if (withdamt > balance && withdamt > 20000) 
 				{
 					throw new InsufficientFundsException("Insufficient Fund RuntimeException");
+					
 				}else if(withdamt < 20000) {
-					throw new WithdrawLimitException("RuntimeException");
+					throw new WithdrawLimitException("WithdrawLimitException RuntimeException");
 				}
 				//return balance;
 		}
 
+}
+
+class InvalidEntryException extends RuntimeException {
+    public InvalidEntryException(String message) {
+        super(message);
+    }
 }
 
 class InsufficientFundsException extends RuntimeException {
@@ -192,20 +203,20 @@ class BankAccountTest {
 	double bal1[]= {55000.0,100000.0,25000.0,55000.0,85000.0};
 	double bal2[]= {20000.0,18000.0,19000.0,17500.0,19900.0};
 	
+	
 	@ParameterizedTest
-	@ValueSource(doubles = {10000, 17300, 15000, -14500, 18999,18899.9,19999.9,-18900.9}) //limit values less than 20000
+	@ValueSource(doubles = {10000, 17300, 15000,18999,19999}) //limit values less than 20000
 	void testdrawLimitExpectedException(double w) {
 		
 			for(i=0;i<bal1.length;i++) {
 			//throws WithdrawLimitException
 			 assertThrows(WithdrawLimitException.class,
 						()->BankAccount.withdraw(w,bal1[i]));
-			}
-		
+			}		
 	}
 	
 	@ParameterizedTest
-	@ValueSource(doubles = {21000, 30000, 50000, 37000, 53000,85000,45555,60000}) //withdraw values more than 20000 
+	@ValueSource(doubles = {21000, 30000, 50000, 39000,85000,60000}) //withdraw values more than 20000 
 	void testInsuffExpectedException(double w) {
 		
 		for(i=0;i<bal2.length;i++) {
@@ -213,6 +224,20 @@ class BankAccountTest {
 		 assertThrows(InsufficientFundsException.class,
 				()->BankAccount.withdraw(w,bal2[i]));
 		}
+		
+	}
+
+	@ParameterizedTest
+	@ValueSource(doubles = {-10000, -17300, -15000,-18999,-99,-19999,-900}) //limit values less than 20000
+	void InvalidEntryException(double w) {
+		
+			for(i=0;i<bal1.length;i++) {
+			//throws WithdrawLimitException
+			 assertThrows(InvalidEntryException.class,
+						()->BankAccount.withdraw(w,bal1[i]));
+			 assertThrows(InvalidEntryException.class,
+						()->BankAccount.withdraw(w,bal2[i]));
+			}		
 	}
 }
 ```
