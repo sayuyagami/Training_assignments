@@ -72,7 +72,7 @@ class MinMaxFinderTest {
 (Minimum value index 0,Maximum value index 1) : 7,99
 (Minimum value index 0,Maximum value index 1) : 11,121
 ```
-![screenshots](screenshots/Maxmintestcases.png)
+![screenshots](https://github.com/sayuyagami/Training_assignments/blob/master/screenshots/Maxmintestcases.png)
 >2.Modify the above method to return a single object representing min and max value of the pass array. Define new sets of Junít Test cases of this modified method.
 #### Main class
 ```sh
@@ -144,7 +144,7 @@ class ObjectarrayTest {
 (Minimum value,Maximum value) : [1449, 9929]
 (Minimum value,Maximum value) : [11000, 89123]
 ```
-![screenshots](screenshots/Objectarraytest.png)
+![screenshots](https://github.com/sayuyagami/Training_assignments/blob/master/screenshots/Objectarraytest.png)
 >3.Write a Bank Account class with method withdraw which accepts amount to be withdrawn from the account (amount to be deducted from the balance of the account). In case there are insufficient funds a InsufficientFunds Expcetion should be raised. After defining the method perform Junit testing to check whether the insufficientFundsException is raised when you try to withdraw amount that is over and above the account balance.BankAccount withdraw(20,000); should raise the insufficient Funds Exception if the
 balance in the account is less than 20,000.
 #### BankAccount
@@ -217,7 +217,7 @@ class BankAccountTest {
 }
 ```
 #### Output
-![screenshots](screenshots/BankAccountTestcase.png)
+![screenshots](https://github.com/sayuyagami/Training_assignments/blob/master/screenshots/BankAccountTestcase.png)
 
 >4.Write a Junit Testing to show the use of Lifecycle hooks annotation such as @BeforeAll,@BeforeEach @AfterEach and @After All
 #### Mainclass
