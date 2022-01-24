@@ -1,5 +1,5 @@
-﻿# JAVA 11 | Assignment 10
-
+﻿# Java11 | Assignment 10
+-------------------------------------------------------------------------
 >1.Write a program to calculate the Simple Interest with minimal code using features of Java 11.
 Hint: Use the concept of functional interface and Local variable syntax for lambda parameters.
 ```sh
@@ -36,9 +36,9 @@ public class Simpleinterest {
 Enter the value for principal : 
 1000
 Enter the value for rate : 
-2
-Enter the value for time : 
 5
+Enter the value for time : 
+2
 Simple interest : 100
 ```
 >2.Java 11 supports var keyword for variable declarations. List the scenarios where var keyword cannot be used for such variable declarations. Give reason in support of your answer for each scenario.
@@ -273,21 +273,20 @@ public class Httprequest {
 		
 		String uri = "https://httpbin.org/get";
 		
-		HttpRequest req = HttpRequest.newBuilder()
+		HttpRequest request = HttpRequest.newBuilder()
 				.uri(URI.create(uri))
 				.GET()
 				.version(Version.HTTP_2)
 				.build();
 		
-		HttpClient client = HttpClient.newBuilder()
-				.build();
+		HttpClient client = HttpClient.newBuilder().build();
 		
 		try
 		{
-			HttpResponse<String> resp = client.send(req, BodyHandlers.ofString());
-			System.out.println(resp.headers());
-			System.out.println(resp.statusCode());
-			System.out.println(resp.body());
+			HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
+			System.out.println(response.headers());
+			System.out.println(response.statusCode());
+			System.out.println(response.body());
 		}
 		catch(IOException | InterruptedException e)
 		{
