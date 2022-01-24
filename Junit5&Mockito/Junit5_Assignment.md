@@ -1,4 +1,4 @@
-# Junit5 | Assignment 1
+﻿# Junit5 | Assignment 1
 ------------------------------------------------------------------------------
 >1.Write a class called Min MaxFinder. Define a method in it called find Min Maxl) which accepts an int array and returns new array of size 2, wherein the oth index will have the min value of the array and 1"index will have max value of the array. Perform Junit testing of the method find MinMax with as many test cases you can think of (min 3 test cases)
 E.g.
@@ -72,7 +72,7 @@ class MinMaxFinderTest {
 (Minimum value index 0,Maximum value index 1) : 7,99
 (Minimum value index 0,Maximum value index 1) : 11,121
 ```
-![alt text for screen readers](C:\Users\SAIHCHIL\Pictures\Maxmintestcases.png "Testcases")
+![screenshots](Maxmintestcases.png)
 >2.Modify the above method to return a single object representing min and max value of the pass array. Define new sets of Junít Test cases of this modified method.
 #### Main class
 ```sh
@@ -144,6 +144,7 @@ class ObjectarrayTest {
 (Minimum value,Maximum value) : [1449, 9929]
 (Minimum value,Maximum value) : [11000, 89123]
 ```
+![screenshots](Objectarraytest.png)
 >3.Write a Bank Account class with method withdraw which accepts amount to be withdrawn from the account (amount to be deducted from the balance of the account). In case there are insufficient funds a InsufficientFunds Expcetion should be raised. After defining the method perform Junit testing to check whether the insufficientFundsException is raised when you try to withdraw amount that is over and above the account balance.BankAccount withdraw(20,000); should raise the insufficient Funds Exception if the
 balance in the account is less than 20,000.
 #### BankAccount
@@ -216,7 +217,7 @@ class BankAccountTest {
 }
 ```
 #### Output
-![alt text for screen readers](C:\Users\SAIHCHIL\Pictures\BankAccountTestcase.png "Testcases")
+![screenshots](BankAccountTestcase.png)
 
 >4.Write a Junit Testing to show the use of Lifecycle hooks annotation such as @BeforeAll,@BeforeEach @AfterEach and @After All
 #### Mainclass
