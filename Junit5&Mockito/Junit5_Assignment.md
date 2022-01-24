@@ -228,11 +228,11 @@ class BankAccountTest {
 	}
 
 	@ParameterizedTest
-	@ValueSource(doubles = {-10000, -17300, -15000,-18999,-99,-19999,-900}) //limit values less than 20000
+	@ValueSource(doubles = {-10000, -17300, -15000,-18999,-99,-19999,-900}) //values less than 0
 	void InvalidEntryException(double w) {
 		
 			for(i=0;i<bal1.length;i++) {
-			//throws WithdrawLimitException
+			//throws InvalidEntryException
 			 assertThrows(InvalidEntryException.class,
 						()->BankAccount.withdraw(w,bal1[i]));
 			 assertThrows(InvalidEntryException.class,
